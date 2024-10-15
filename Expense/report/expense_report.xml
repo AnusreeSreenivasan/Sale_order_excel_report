@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+    <template id="report_custom_expense">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t t-call="web.external_layout">
+                    <div class="page">
+                        <center>
+                            <h1>Customer Details</h1>
+                        </center>
+                        <br></br>
+                            <div>
+                                <p>
+                                    Name : <span t-field="o.name.name"/>
+                                </p>
+                                <p>
+                                    Age : <span t-field="o.age"/>
+                                </p>
+                                <p>
+                                    Phone Number : <span t-field="o.phone"/>
+                                </p>
+                                <p>
+                                    Gender : <span t-field="o.gender"/>
+                                </p>
+                            </div>
+                    </div>
+                    <div class="content" t-if="o. product_ids">
+                        <div class="description-page">
+                            <center><h3>Product Details</h3></center>
+                            <table class="table table-bordered description-table">
+                                <thead>
+                                    <tr>
+                                        <th>Product</th>
+                                        <th>Unit Price</th>
+                                        <th>Quantity</th>
+                                        <th>Price</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <t t-foreach="o.product_ids" t-as="p">
+                                        <tr>
+                                            <td>
+                                                <span t-field="p.products_id"/>
+                                            </td>
+                                            <td>
+                                                <span t-field="p.unit_price"/>
+                                            </td>
+                                            <td>
+                                                <span t-field="p.quantity"/>
+                                            </td>
+                                            <td>
+                                                <span t-field="p.price"/>
+                                            </td>
+                                        </tr>
+                                    </t>
+                                </tbody>
+                            </table>
+                                <div id="container" class="row" style="text-align: right;">
+                                    <div class="column">
+                                        <p style="text-align: left;">Discount Type: <span style="padding-left: 10px; text-align: right;" t-field="o.discount_type"/></p>
+                                        <p style="text-align: left;">Price: $<span style="padding-left: 10px; text-align: right;" t-field="o.total"/></p>
+                                        <p style="text-align: left;">Discount Amount: $<span style="padding-left: 10px; text-align: right;" t-field="o.discount"/></p>
+                                        <hr></hr>
+                                        <p style="text-align: left;">Total Amount: $<span style="padding-left: 10px; text-align: right;" t-field="o.price_after_discount"/></p>
+                                    </div>
+                                </div>
+
+                        </div>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+    </data>
+
+</odoo>
+

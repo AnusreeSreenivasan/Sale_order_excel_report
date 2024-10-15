@@ -1,0 +1,9 @@
+<data noupdate="1">
+        <record id="sequence_custom_expense" model="ir.sequence">
+            <field name="name">Custom Expense Sequence</field>
+            <field name="code">custom.expense</field>
+            <field name="prefix">HP</field>
+            <field name="padding">1</field>
+            <!-- Add any other required fields here if necessary -->
+        </record>
+</data>
